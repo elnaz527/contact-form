@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Karla-VariableFont_wght';
+    src: url('./assets/fonts/Karla-VariableFont_wght.ttf')format('ttf');
+}
+@font-face {
+    font-family: 'Karla-Italic-VariableFont_wght';
+    src: url('./assets/fonts/Karla-Italic-VariableFont_wght.ttf')format('ttf');
+}
+@font-face {
+    font-family: 'karla-regular';
+    src: url('./assets/fonts/karla-regular.woff') format('woff');
+}
