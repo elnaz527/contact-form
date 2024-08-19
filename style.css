@@ -42,19 +42,18 @@ body{
     padding-left: 10px;
 }
 #message p{
-    padding-left: 25px;
-    margin-top: 10px;
+    padding: 15px 25px;
     font-size: 14px;
-    padding-bottom: 15px;
 }
 #form{
     margin: auto;
     width: 50%;
     background-color: #fff;
-    margin-top: 80px;
+    margin-top: 60px;
     padding: 40px ;
     border-radius: 15px;
     z-index: 0;
+    margin-bottom: 60px;
 }
 #form h3{
     margin-top: 30px;
@@ -74,10 +73,12 @@ body{
 }
 .f-name{
     width:100%;
+    height: 100px;
     margin-right: 20px; 
 }
 .l-name{
     width:100%;
+    height: 100px;
 }
 .f-name input, .l-name input{
     width: 100%;
@@ -128,6 +129,9 @@ input:focus{
     height: 40px;
     width:calc(50% - 15px);
 }
+#query-type div:hover{
+    border-color: hsl(187, 24%, 22%);
+}
 #text-input{
     width:calc(100% - 30px) ;
     height: 120px;
@@ -160,6 +164,9 @@ input:focus{
     border-radius: 3px;
     cursor: pointer;
 }
+#check-tick:hover{
+    border-color: hsl(187, 24%, 22%);
+}
 .check-tick-true{
     background: url("./assets/images/icon-checkbox-check.svg");
     background-position: center;
@@ -189,6 +196,10 @@ button:hover{
     background: url("./assets/images/icon-radio-selected.svg");
     background-position: center;
 }
+.button-selected{
+    background-color:hsl(145, 38%, 91%) ;
+    border-color: hsl(169, 82%, 27%) ;
+}
 
 @media (max-width:769px){
     #form{
@@ -215,7 +226,7 @@ button:hover{
 @media (max-width:400px){
     #message{
         width: 60%;
-        height: 90px;
+        height: 80px;
         margin-top: 10px;
         font-size: 12px;
         border-radius: 8px;
@@ -227,21 +238,21 @@ button:hover{
         padding-left: 10px;
     }
     #message span img{
-        width: 11px;
-        height: 11px;
+        width: 14px;
+        height: 14px;
         border-radius: 50%;
     }
     #message span h4{
         padding-left: 4px;
     }
     #message p{
-        padding: 10px 10px;
+        padding: 10px 15px;
         font-size: 10px;
         }
     #form{
         margin: auto;
         width: 80%;
-        margin-top: 40px;
+        margin-top: 30px;
         padding: 20px ;
     }
     #form h2{
@@ -253,7 +264,7 @@ button:hover{
         font-size: 14px;
     }
     #form h4{
-        margin-top: 10px;
+        margin-top: 8px;
         font-weight: 300;
         font-size: 12px;
     }
@@ -271,6 +282,13 @@ button:hover{
     }
     .f-name{
         margin-right:0; 
+        height: 80px;
+        margin-bottom: 15px;
+    }
+    .l-name{
+        height: 80px;
+        margin-bottom: 15px;
+
     }
     #query-type{
         width: 100%;

@@ -1,17 +1,22 @@
-// const emailAddress = document.getElementById("email-address");
 const inputes = document.querySelectorAll("input");
 const submitButton = document.querySelector("button");
 const checkTick = document.getElementById("check-tick");
 const textMessage = document.getElementById("text-input");
+const emailAddress = document.getElementById("email-address");
 const errTickBox = document.getElementById("err-tickbox");
 const radioButtons = document.querySelectorAll(".radio-button");
 const errRadioButton = document.getElementById("err-radio");
 const message = document.getElementById("message");
 const form = document.getElementById("form");
+console.log(textMessage.style);
 let tickBox = false;
 let selected = null;
 let statusInput = 0;
-const checkValues = () => {
+const showMessage = () => {
+  message.style.display = "block";
+  form.style.marginTop = "0";
+};
+const checkFormValues = () => {
   statusInput = 0;
   inputes.forEach((input) => {
     if (!input.value) {
@@ -19,22 +24,43 @@ const checkValues = () => {
       input.classList.add("error-inpute");
     } else {
       statusInput++;
+      input.nextElementSibling.style.display = "none";
+      input.classList.remove("error-inpute");
     }
   });
+  if (!emailAddress.value.includes("@")) {
+    emailAddress.nextElementSibling.style.display = "block";
+    emailAddress.classList.add("error-inpute");
+  } else {
+    statusInput++;
+    emailAddress.nextElementSibling.style.display = "none";
+    emailAddress.classList.remove("error-inpute");
+  }
   if (!textMessage.value) {
     textMessage.nextElementSibling.style.display = "block";
     textMessage.classList.add("error-inpute");
   } else {
     statusInput++;
+    textMessage.nextElementSibling.style.display = "none";
+    textMessage.classList.remove("error-inpute");
   }
-  !tickBox ? (errTickBox.style.display = "block") : statusInput++;
-  !selected ? (errRadioButton.style.display = "block") : statusInput++;
+  if (!tickBox) {
+    errTickBox.style.display = "block";
+  } else {
+    statusInput++;
+    errTickBox.style.display = "none";
+  }
+  if (!selected) {
+    errRadioButton.style.display = "block";
+  } else {
+    statusInput++;
+    errRadioButton.style.display = "none";
+  }
   return statusInput;
 };
 const submitHandler = () => {
-  let value = checkValues(statusInput);
-  console.log(value);
-  if (value >= 6) {
+  let checkValue = checkFormValues(statusInput);
+  if (checkValue >= 7) {
     showMessage();
     reloadForm();
     setTimeout(() => {
@@ -42,7 +68,6 @@ const submitHandler = () => {
       form.style.marginTop = "80px";
     }, 3000);
   }
-  console.log(statusInput);
 };
 const reloadForm = () => {
   inputes.forEach((input) => {
@@ -59,11 +84,8 @@ const reloadForm = () => {
   selected = null;
   radioButtons.forEach((button) => {
     button.children[0].classList.remove("radio-button-select");
+    button.classList.remove("button-selected");
   });
-};
-const showMessage = () => {
-  message.style.display = "block";
-  form.style.marginTop = "0";
 };
 const checkTickHandler = () => {
   if (!tickBox) {
@@ -76,12 +98,13 @@ const checkTickHandler = () => {
 };
 const selectHandler = (event) => {
   selected = event.target.id;
-  console.log(selected);
   radioButtons.forEach((button) => {
     if (button.id === selected) {
       button.children[0].classList.add("radio-button-select");
+      button.classList.add("button-selected");
     } else {
       button.children[0].classList.remove("radio-button-select");
+      button.classList.remove("button-selected");
     }
   });
 };
