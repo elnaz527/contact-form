@@ -6,6 +6,7 @@ body{
     max-width: 1440px;
     box-sizing: border-box;
     font-family: "karla-regular";
+    /* font-family: Arial, Helvetica, sans-serif; */
     font-size: 16px;
     background-color: rgb(224, 241, 231);
 }
@@ -14,33 +15,36 @@ body{
     width: 40%;
     height: 100px;
     margin-top: 25px;
-    font-size: 15px;
     background-color:hsl(187, 24%, 22%) ;
     color: #fff;
     border-radius: 10px;
-    font-weight: 300;
+    font-weight: 400;
+    font-size: 14px;
     letter-spacing: 0.5px;
     margin-bottom: -8px;
     position: relative;
-    display: none;
+    transition: all 0.2 ease-in;
+    display:none;
 }
 #message span{
     display: flex;
+    align-items: center;
     padding-top: 25px;
     padding-left: 25px;
 }
 #message span img{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
+    padding-right: 8px;
 }
 #message span h4{
-    padding-left: 8px;
+    padding-left: 10px;
 }
 #message p{
     padding-left: 25px;
-    margin-top: 8px;
-    font-size: 12px;
+    margin-top: 10px;
+    font-size: 14px;
     padding-bottom: 15px;
 }
 #form{
@@ -52,18 +56,18 @@ body{
     border-radius: 15px;
     z-index: 0;
 }
-#form h4{
+#form h3{
     margin-top: 30px;
     font-weight: 700;
 }
-#form h3{
+#form h4{
     margin-top: 10px;
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 500;
     color: hsl(0, 66%, 54%);
+    font-size: 14px;
 }
 #full-name{
-    width:calc(100% - 15px);
+    width: 100%;
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -83,29 +87,30 @@ input{
     border: 1px solid hsl(186, 15%, 59%);
     border-radius: 5px;
     margin-top: 10px;
-    height: 35px;
+    height: 40px;
     padding:0 15px;
-    font-size: 15px;
 }
 input:hover{
     border-color: hsl(187, 24%, 22%);
+    cursor: pointer;
 }
 input:focus{
     border-color: hsl(187, 24%, 22%);
     outline:  hsl(187, 23%, 15%);
 }
 #email-address{
-    width:calc(100% - 15px);
+    width: 100%;
 }
 #query-type{
-    width:calc(100% - 15px);
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    cursor: pointer;
 }
 #query-type .circle{
-   width: 15px;
-   height: 15px;
+   width: 18px;
+   height: 18px;
    background-color: #fff;
    border: none;
    border: 1px solid  hsl(186, 15%, 59%);
@@ -124,10 +129,24 @@ input:focus{
     width:calc(50% - 15px);
 }
 #text-input{
-    width:calc(100% - 15px);
+    width:calc(100% - 30px) ;
     height: 120px;
     flex-wrap: wrap;
     text-align: left;
+    /* box-sizing: border-box; */
+    border: 1px solid hsl(186, 15%, 59%);
+    border-radius: 5px;
+    margin-top: 10px;
+    padding:15px;
+    resize: none;
+}
+#text-input:hover{
+    border-color: hsl(187, 24%, 22%);
+    cursor: pointer;
+}
+#text-input:focus{
+    border: 1px solid hsl(187, 24%, 22%);
+    outline:  hsl(187, 23%, 15%);
 }
 #check-box{
     display: flex;
@@ -139,24 +158,147 @@ input:focus{
     border: 1px solid  #87a3a6;
     margin-right: 8px;
     border-radius: 3px;
-    /* background: #fff; */
-    /* background: url("./assets/images/icon-checkbox-check.svg"); */
+    cursor: pointer;
 }
 .check-tick-true{
     background: url("./assets/images/icon-checkbox-check.svg");
+    background-position: center;
 }
 button{
     margin-top: 40px;
     width: 100%;
-    height: 38px;
+    height: 40px;
     font-weight: 500;
-    font-size: 14px;
     color: #fff;
     background-color: hsl(169, 82%, 27%) ;
     border: 1px;
     border-radius: 6px;
     letter-spacing: 0.7px;
+    cursor: pointer;
+}
+button:hover{
+    background-color:  hsl(169, 91%, 31%) ;
 }
 .error-inpute{
     border-color: hsl(0, 66%, 54%) ;
+}
+.error-message{
+    display: none;
+}
+.radio-button-select{
+    background: url("./assets/images/icon-radio-selected.svg");
+    background-position: center;
+}
+
+@media (max-width:769px){
+    #form{
+        width: 70%;
+        margin-top: 80px;
+        padding: 30px ;
+    }
+    #form h3{
+        font-weight: 600;
+        font-size: 15px;
+    }
+    #form h4{
+        font-size: 14px;
+    }
+    #query-type .circle{
+       width: 15px;
+       height: 15px;
+       margin:0 10px;
+    }
+    #query-type div{
+        font-size: 13px;
+    }
+}
+@media (max-width:400px){
+    #message{
+        width: 60%;
+        height: 90px;
+        margin-top: 10px;
+        font-size: 12px;
+        border-radius: 8px;
+        margin-bottom: -8px;
+    }
+    #message span{
+        display: flex;
+        padding-top: 15px;
+        padding-left: 10px;
+    }
+    #message span img{
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+    }
+    #message span h4{
+        padding-left: 4px;
+    }
+    #message p{
+        padding: 10px 10px;
+        font-size: 10px;
+        }
+    #form{
+        margin: auto;
+        width: 80%;
+        margin-top: 40px;
+        padding: 20px ;
+    }
+    #form h2{
+        font-size: 18px;
+    }
+    #form h3{
+        margin-top: 20px;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    #form h4{
+        margin-top: 10px;
+        font-weight: 300;
+        font-size: 12px;
+    }
+    #full-name{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    input{
+        margin-top: 8px;
+        height: 40px;
+        padding:0 15px;
+        font-size: 14px;
+    }
+    .f-name{
+        margin-right:0; 
+    }
+    #query-type{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #query-type .circle{
+       width: 15px;
+       height: 15px;
+       margin-left: 25px;
+    }
+    #query-type div{
+        height: 40px;
+        width: 100%;
+        font-size: 14px;
+    }
+    #check-box p{
+        font-size: 14px;
+    }
+    #check-tick {
+        width: 15px;
+        height: 15px;
+    }
+    button{
+        margin-top: 30px;
+        font-weight: 600;
+        font-size: 14px;
+    }
 }
