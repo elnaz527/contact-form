@@ -14,40 +14,40 @@
 </head>
 <body>
     <div id="message">
-        <span><img src="./assets/images/icon-success-check.svg" alt=""><h4>Message Sent!</h3></span>
+        <span><img src="./assets/images/icon-success-check.svg" alt=""><h3>Message Sent!</h3></span>
         <p>Thanks for completing the form. We'll be in touch soon!</p>
     </div>
     <div id="form">
         <h2>Contact Us</h2>
         <div id="full-name">
             <div class="f-name">
-                <h4>First Name <span style= "color:hsl(169, 82%, 27%)">*</span></h4>
-                <input type="text">
-                <h3 class="error-message">This field is required</h3>
+                <h3>First Name <span style= "color:hsl(169, 82%, 27%)">*</span></h3>
+                <input type="text" id="first-name">
+                <h4 class="error-message" id="err-f-name">This field is required</h4>
             </div>
             <div class="l-name">
-                <h4>Last Name <span style= "color:hsl(169, 82%, 27%)">*</span></h4>
-                <input type="text">
-                <h3 class="error-message">This field is required</h3>
+                <h3>Last Name <span style= "color:hsl(169, 82%, 27%)">*</span></h3>
+                <input type="text"  id="last-name">
+                <h4 class="error-message" id="err-l-name">This field is required</h4>
             </div>
         </div>
-        <h4>Email Address <span style= "color:hsl(169, 82%, 27%)">*</span></h4>
-        <input type="text" id="email-address">
-        <h3 class="error-message">Please enter a valid email address</h3>
-        <h4>Query Type <span style= "color:hsl(169, 82%, 27%)">*</span></h4>
+        <h3>Email Address <span style= "color:hsl(169, 82%, 27%)">*</span></h3>
+        <input type="email" id="email-address">
+        <h4 class="error-message" id="err-email">Please enter a valid email address</h4>
+        <h3>Query Type <span style= "color:hsl(169, 82%, 27%)">*</span></h3>
         <div id="query-type">
-            <div class="general"><span class="circle"></span>General Enquiry</div>
-            <div class="support"><span  class="circle"></span>Support Request</div>
+            <div class="radio-button" id="general"><span class="circle"></span>General Enquiry</div>
+            <div class="radio-button" id="support"><span  class="circle"></span>Support Request</div>
         </div>
-        <h3 class="error-message">Please select a query type</h3>
-        <h4>Message <span style= "color:hsl(169, 82%, 27%)">*</span></h4>
-        <input type="text" id="text-input">
-        <h3 class="error-message">This field is required</h3>
+        <h4 class="error-message" id="err-radio">Please select a query type</h4>
+        <h3>Message <span style= "color:hsl(169, 82%, 27%)">*</span></h3>
+        <textarea name="message" id="text-input" cols="20" rows="10"></textarea>
+        <h4 class="error-message">This field is required</h4>
         <div id="check-box">
             <div id="check-tick"></div>
             <p>I consent to being contacted by the team</p>
         </div>
-        <h3 class="error-message">To submit this form, please consent to being contacted</h3>
+        <h4 class="error-message" id="err-tickbox">To submit this form, please consent to being contacted</h4>
         <button>Submit</button>
     </div>
   <script src="./script.js"></script>
